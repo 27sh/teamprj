@@ -5,23 +5,24 @@
 <title>Document</title>
 </head>
 <body>
-<h2>boardList Page</h2>
-<table>
-<thead>
-    <tr>
-        <th>번호</th><th>제목</th><th>작성자</th>
-    </tr>
-</thead>
-<tbody>
-    <tr th:each="post : ${list}">
-    <th:block th:if="${uno == null}">
-        <td th:text="${post.bno}"></td>
-        <td th:href="@{/boardDetail(bno=${post.bno})}">[[${post.title}]]</td>
-        <td th:text="${post.name}"></td>
-    </th:block>
-    </tr >
-</tbody>
+	<h2>boardList Page</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th><th>제목</th><th>작성자</th>
+			</tr>
+		</thead>
+		<tbody>
 
-</table>
+			<tr th:each="post : ${list}">
+				<th:block th:if="${uno == null}">
+					<td th:text="${post.bno}"></td>
+					<td><a th:href="@{/boardDetail(bno=${post.bno})}">[[${post.title}]]</a></td>
+					<td th:text="${post.name}"></td>
+				</th:block>
+			</tr>
+		</tbody>
+
+	</table>
 </body>
 </html>
