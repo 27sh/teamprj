@@ -20,19 +20,11 @@
 	</select>	
 	
 	<select id="getMyMnoPage">
-		SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
-	    FROM team_member m
-	    RIGHT JOIN team_board b
-	    ON m.mno = b.mno
-	    WHERE mno = #{mno}
+		SELECT * FROM team_board WHERE mno = #{mno}
 	</select>
 	
 	<select id="getMyUnoPage">
-		SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
-	    FROM team_member m
-	    RIGHT JOIN team_board b
-	    ON m.mno = b.mno
-	    WHERE uno = #{mno}
+		SELECT * FROM team_board WHERE uno = #{mno}
 	</select>
 	
 	<insert id="write">
