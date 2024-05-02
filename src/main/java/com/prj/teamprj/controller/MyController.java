@@ -62,7 +62,7 @@ public class MyController {
 		
 		return "loginForm";
 	}
-	//@RequestMapping("/login") //로그인 기능
+	@RequestMapping("/login") //로그인 기능
 	public String login(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) {
 						
 		MemberDto mdto = mdao.select(id, pw);
@@ -90,7 +90,7 @@ public class MyController {
 	public String boardList(Model model) {
 		
 		model.addAttribute("list", dao.getList());
-				
+		
 		return "boardList";
 	}
 	
