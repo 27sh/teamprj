@@ -85,6 +85,20 @@ public class MyController {
 		}
 	}
 	
+	//로그아웃
+	@RequestMapping("/logout")
+	public String logout() {
+		
+	    HttpSession session = request.getSession();
+	    session.invalidate();
+	    
+	    // 로그인 페이지로 리다이렉트
+	    return "redirect:login";
+	
+	
+	}
+	
+	
 	//boardList페이지
 	@RequestMapping("/boardList") //List 화면
 	public String boardList(Model model) {
@@ -115,7 +129,7 @@ public class MyController {
 		
 		model.addAttribute("bno", dao.getDto(bno));
 		
-		return "boardDetial";
+		return "boardDetail";
 	}
 	
 	//boardDelete 삭제
