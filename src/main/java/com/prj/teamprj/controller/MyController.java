@@ -127,7 +127,7 @@ public class MyController {
 	@RequestMapping("/boardDetail")
 	public String boardDetail(@RequestParam("bno") String bno, Model model) {
 		
-		model.addAttribute("bno", dao.getDto(bno));
+		model.addAttribute("list", dao.getDto(bno));
 		
 		return "boardDetail";
 	}
@@ -136,7 +136,7 @@ public class MyController {
 	@RequestMapping("/boardDelete")
 	public String boardDelete(@RequestParam("bno") String bno, Model model) {
 	
-		model.addAttribute("bno", dao.getDto(bno));
+		model.addAttribute("list", dao.getDto(bno));
 		
 		//삭제했으니 확인하러 List보러가기
 		return "redirect:boardList";
