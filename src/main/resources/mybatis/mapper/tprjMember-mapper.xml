@@ -5,10 +5,14 @@
 
   <mapper namespace="com.prj.teamprj.dao.ITPrjMemberDao">
 	
-	<insert id="sginUp">
-		INSERT INTO member_board (id, pw, name) VALUES
+	<insert id="signUp">
+		INSERT INTO team_member (id, pw, name) VALUES
 		(#{dto.id}, #{dto.pw}, #{dto.name})
 	</insert>
+	
+	<select id="select">
+		SELECT * FROM team_member WHERE id = #{id} AND pw = #{pw}
+	</select>
   </mapper>
   
   
