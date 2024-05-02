@@ -14,7 +14,7 @@
 </thead>
 <tbody>
     <tr th:each="post : ${list}">
-    <th:block th:if="${post.uno eq null}">
+    <th:block th:if="${uno == null}">
         <td th:text="${post.bno}"></td>
         <td th:href="@{/boardDetail(bno=${post.bno})}">[[${post.title}]]</td>
         <td th:text="${post.name}"></td>
