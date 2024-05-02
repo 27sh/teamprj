@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.prj.teamprj.dao.ITPrjMemeberDao;
+import com.prj.teamprj.dao.ITPrjMemberDao;
 import com.prj.teamprj.dao.ITeamPrjDao;
 import com.prj.teamprj.dto.MemberDto;
 import com.prj.teamprj.dto.MyPageDto;
@@ -23,7 +23,7 @@ public class MyController {
 	private ITeamPrjDao dao;
 	
 	@Autowired
-	private ITPrjMemeberDao mdao;
+	private ITPrjMemberDao mdao;
 	
 	@Autowired
 	HttpServletRequest request;
