@@ -11,5 +11,10 @@ import com.prj.teamprj.dto.MyPageDto;
 @Mapper
 public interface ITPrjMemeberDao {
 	
-	public void sginUp(@Param("dto") MemberDto dto);
+	public void signUp(@Param("dto") MemberDto dto);
+	//회원가입 (insert into team_member)
+	
+	public MemberDto select(@Param("id") String id, @Param("pw") String pw);
+	//로그인 (select * from team_member)
+
 }
