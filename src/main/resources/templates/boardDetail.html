@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+    <h2>Detail Page</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th><th>제목</th><th>내용</th><th>작성자</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${list.bno}"></td>
+                <td th:text="${list.title}"></td>
+                <td th:text="${list.content}"></td>
+                <td th:text="${list.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
