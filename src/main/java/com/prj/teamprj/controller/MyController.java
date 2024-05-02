@@ -64,9 +64,8 @@ public class MyController {
 	}
 	//@RequestMapping("/login") //로그인 기능
 	public String login(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) {
-		MemberDto dto = new MemberDto();
-				
-		MemberDto mdto = mdao.select("id", "pw");
+						
+		MemberDto mdto = mdao.select(id, pw);
 		String msg="";
 		if(mdto == null) {
 			msg = "회원정보가 없습니다.";
@@ -75,10 +74,10 @@ public class MyController {
 			return "loginForm";
 		}else {
 			HttpSession session = request.getSession();
-			session.setAttribute("mno",dto.getMno());
-			session.setAttribute("id",dto.getId());
-			session.setAttribute("pw",dto.getPw());
-			session.setAttribute("name",dto.getName());
+			session.setAttribute("mno",mdto.getMno());
+			session.setAttribute("id",mdto.getId());
+			session.setAttribute("pw",mdto.getPw());
+			session.setAttribute("name",mdto.getName());
 			
 			//로그인 성공시 List보러가기
 			return "redirect:boardList";
