@@ -14,4 +14,6 @@ public class MyPageDto {
 	private int bno;
 	private String title;
 	private String content;
+	private String name;
+	private int uno;
 }

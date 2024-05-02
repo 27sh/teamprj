@@ -17,4 +17,10 @@ public interface ITeamPrjDao {
 	public MyPageDto getDto(@Param("bno") String bno);
 
 	public void delete(@Param("bno") String bno);
+	
+	public MyPageDto getMyMnoPage(@Param("mno") String mno);
+	//mno 본인이 쓴 게시글 list
+	
+	public MyPageDto getMyUnoPage(@Param("uno") String uno);
+	//uno, 언급된 글 list
 }
