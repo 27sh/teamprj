@@ -10,17 +10,13 @@
 	    RIGHT JOIN team_board b
 	    ON m.mno = b.mno
 	</select>
-	
-	<insert id="write">
-		INSERT INTO team_board (title, content, mno) VALUES
-		(#{dto.title}, #{dto.content}, #{dto.mno})
-	</insert>
-	
+
 	<select id="getDto">
 		SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
 	    FROM team_member m
 	    RIGHT JOIN team_board b
 	    ON m.mno = b.mno
+	    WHERE bno = #{bno}
 	</select>	
 	
 	<select id="getMyMnoPage">
@@ -38,6 +34,16 @@
 	    ON m.mno = b.mno
 	    WHERE uno = #{mno}
 	</select>
+	
+	<insert id="write">
+		INSERT INTO team_board (title, content, mno) VALUES
+		(#{dto.title}, #{dto.content}, #{dto.mno})
+	</insert>
+	
+	<insert id="detailWrite">
+		INSERT INTO team_board (title, content, mno, uno) VALUES
+		(#{dto.title}, #{dto.content}, #{dto.mno}, #{dto.uno})
+	</insert>
 	
 	<delete id="delete">
 		DELETE FROM team_board WHERE bno = #{bno}

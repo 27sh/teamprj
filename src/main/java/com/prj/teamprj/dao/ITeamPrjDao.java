@@ -23,4 +23,7 @@ public interface ITeamPrjDao {
 	
 	public MyPageDto getMyUnoPage(@Param("uno") String uno);
 	//uno, 언급된 글 list
+	
+	public void detailWrite(@Param("dto") MyPageDto dto);
+	//detail 내 uno를 활용한 write
 }
