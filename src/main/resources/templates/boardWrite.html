@@ -7,6 +7,7 @@
 <body>
 <h2>Board Write Page</h2>
 <form action="write" method="post">
+    <input type="hidden" name="mno" value="${session.mno}">
     제목: <input type="text" name="title"><br>
     내용: <input type="text" name="content"><br>
     <input type="submit" value="작성 완료">
