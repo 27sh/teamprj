@@ -5,8 +5,20 @@
 <title>Document</title>
 </head>
 <body>
-    <h2>My Page</h2>
-
-    
+	<h2>My Page</h2>
+	<a th:href="@{/}">홈으로 가기</a>
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th><th>제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="post : ${mymno}">
+					<td th:text="${post.bno}"></td>
+					<td><a th:href="@{/boardDetail(bno=${post.bno})}">[[${post.title}]]</a></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

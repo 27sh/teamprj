@@ -6,6 +6,7 @@
 </head>
 <body>
 	<h2>boardList Page</h2>
+	<a th:href="@{/}">홈으로 가기</a>
 	<table>
 		<thead>
 			<tr>
@@ -13,7 +14,6 @@
 			</tr>
 		</thead>
 		<tbody>
-
 			<tr th:each="post : ${list}">
 				<th:block th:if="${uno == null}">
 					<td th:text="${post.bno}"></td>
@@ -22,7 +22,6 @@
 				</th:block>
 			</tr>
 		</tbody>
-
 	</table>
 </body>
 </html>
