@@ -129,14 +129,14 @@ public class MyController {
 	}
 	///////////////////////////////////////////////////////////
 	//MyPage
-	@RequestMapping("/mypage")
+	@RequestMapping("/myPage")
 	public String mypage(Model model,@RequestParam("mno") String mno, @RequestParam("uno") String uno) {
 		//mno 본인이 쓴 게시물
 		model.addAttribute("mymno",dao.getMyMnoPage(mno));
 		//uno 본인이 언급된 게시물
 		model.addAttribute("myuno",dao.getMyUnoPage(uno));
 		
-		return "mypage";
+		return "myPage";
 	}
 	
 	

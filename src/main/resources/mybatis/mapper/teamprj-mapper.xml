@@ -8,24 +8,35 @@
 	    SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
 	    FROM team_member m
 	    RIGHT JOIN team_board b
-	    ON m.mno = b.mno;
+	    ON m.mno = b.mno
 	</select>
 	
 	<insert id="write">
-		INSERT INTO team_board (title, content, uno) VALUES
-		(#{dto.title}, #{dto.content}, #{uno})
+		INSERT INTO team_board (title, content, mno) VALUES
+		(#{dto.title}, #{dto.content}, #{dto.mno})
 	</insert>
 	
 	<select id="getDto">
-		SELECT * FROM team_board WHERE bno = #{bno}
+		SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
+	    FROM team_member m
+	    RIGHT JOIN team_board b
+	    ON m.mno = b.mno
 	</select>	
 	
 	<select id="getMyMnoPage">
-		SELECT * FROM team_board WHERE mno = #{mno}
+		SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
+	    FROM team_member m
+	    RIGHT JOIN team_board b
+	    ON m.mno = b.mno
+	    WHERE mno = #{mno}
 	</select>
 	
 	<select id="getMyUnoPage">
-		SELECT * FROM team_board WHERE uno = #{mno}
+		SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
+	    FROM team_member m
+	    RIGHT JOIN team_board b
+	    ON m.mno = b.mno
+	    WHERE uno = #{mno}
 	</select>
 	
 	<delete id="delete">
