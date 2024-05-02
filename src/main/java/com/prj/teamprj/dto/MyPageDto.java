@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 public class MyPageDto {
 	private int mno;
 	private int bno;
-	private String name;
 	private String title;
 	private String content;
 }
