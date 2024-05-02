@@ -9,7 +9,7 @@ import com.prj.teamprj.dto.MemberDto;
 import com.prj.teamprj.dto.MyPageDto;
 
 @Mapper
-public interface ITPrjMemeberDao {
+public interface ITPrjMemberDao {
 	
 	public void signUp(@Param("dto") MemberDto dto);
 	//회원가입 (insert into team_member)
