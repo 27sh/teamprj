@@ -5,10 +5,10 @@
 
   <mapper namespace="com.prj.teamprj.dao.ITeamPrjDao">
 	<select id="getList" resultType="com.prj.teamprj.dto.MyPageDto">
-		SELECT m.name, b.title, b.content
-		FROM team_member m
-		RIGHT JOIN team_board b
-		ON m.mno = b.mno;
+	    SELECT m.mno, b.bno, b.title, b.content, m.name, b.uno
+	    FROM team_member m
+	    RIGHT JOIN team_board b
+	    ON m.mno = b.mno;
 	</select>
 	
 	<insert id="write">
@@ -18,7 +18,7 @@
 	
 	<select id="getDto">
 		SELECT * FROM team_board WHERE bno = #{bno}
-	</select>
+	</select>	
 	
 	<select id="getMyMnoPage">
 		SELECT * FROM team_board WHERE mno = #{mno}
