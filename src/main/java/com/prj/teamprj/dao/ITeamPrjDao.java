@@ -17,5 +17,4 @@ public interface ITeamPrjDao {
 	public MyPageDto getDto(@Param("bno") String bno);
 
 	public void delete(@Param("bno") String bno);
-	
 }
