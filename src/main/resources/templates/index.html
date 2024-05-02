@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Document</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <h1>Index Page</h1>
+<th:block th:if="${session.id eq null}">
+<a href="login">로그인</a><a href="member">회원가입</a><br>
+</th:block>"
+<th:block th:if="#{session.id ne null}">
+<a href="logout">로그아웃</a>
+<a href="myPage">MyPage</a>
+</th:block>
+<a href="boardList">게시판</a>
 </body>
 </html>
