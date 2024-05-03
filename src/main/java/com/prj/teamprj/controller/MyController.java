@@ -135,7 +135,7 @@ public class MyController {
 		
 		dao.detailWrite(dto);
 		
-		return "redirect:boardDetail";
+		return "redirect:boardList";
 	}
 	
 	
