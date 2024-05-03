@@ -24,7 +24,7 @@
 	</select>
 	
 	<select id="getMyUnoPage">
-		SELECT * FROM team_board WHERE uno = #{mno}
+		SELECT * FROM team_board WHERE uno = #{uno}
 	</select>
 	
 	<insert id="write">
