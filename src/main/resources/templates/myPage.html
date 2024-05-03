@@ -20,5 +20,19 @@
 			</tr>
 		</tbody>
 	</table>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th><th>제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="get : ${myuno}">
+					<td th:text="${get.bno}"></td>
+					<td><a th:href="@{/boardDetail(bno=${get.bno})}">[[${get.title}]]</a></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

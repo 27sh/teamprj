@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<h2>Board Target Write Page</h2>
+<form action="DetailWrite" method="post">
+    <input type="hidden" name="mno" th:value="${session.mno}">
+    제목: <input type="text" name="title" placeholder="제목을 입력하세요"><br>
+    내용: <input type="text" name="content" placeholder="내용을 입력하세요"><br>
+	대상: <input type="text" name="uno" th:readonly th:value="${target.mno}"><br>    
+    <input type="submit" value="작성 완료">
+</form>
+</body>
+</html>
