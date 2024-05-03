@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<h2>boardList Page</h2>
-	<a th:href="@{/}">홈으로 가기</a>
+	<header class="header">
+		<h2>게시판</h2>
+	</header>
+	<nav><a th:href="@{/}">홈으로 가기</a>
+	</nav>
+	
 	<table>
 		<thead>
 			<tr>
-				<th>번호</th><th>제목</th><th>작성자</th>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
 			</tr>
 		</thead>
 		<tbody>

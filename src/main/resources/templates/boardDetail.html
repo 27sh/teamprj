@@ -3,27 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h2>Detail Page</h2>
-    	<a th:href="@{/}">홈으로 가기</a>
-    <table>
-        <thead>
-            <tr>
-                <th>번호</th><th>제목</th><th>내용</th><th>작성자</th><th>삭제</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            	
-                <td th:text="${list.bno}"></td>
-                <td th:text="${list.title}"></td>
-                <td th:text="${list.content}"></td>
-                <td th:text="${list.name}"></td>
-                <td><a th:href="@{/delete(bno=${list.bno})}">삭제</a></td>
-                <td><a th:href="@{/boardDetailWrite(bno=${list.bno})}">글 작성하기</a></td>
-            </tr>
-        </tbody>
-    </table>
+	<header class="header">
+		<h2>상세 페이지</h2>
+	</header>
+	<nav>
+	<a th:href="@{/}">홈으로 가기</a>
+	</nav>
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>내용</th>
+				<th>작성자</th>
+				<th>삭제</th>
+				<th>대상작성</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<td th:text="${list.bno}"></td>
+				<td th:text="${list.title}"></td>
+				<td th:text="${list.content}"></td>
+				<td th:text="${list.name}"></td>
+				<td><a th:href="@{/delete(bno=${list.bno})}">삭제</a></td>
+				<td><a th:href="@{/boardDetailWrite(bno=${list.bno})}">대상작성</a></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
