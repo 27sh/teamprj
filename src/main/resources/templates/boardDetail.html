@@ -30,7 +30,7 @@
 				<td th:text="${list.title}"></td>
 				<td th:text="${list.content}"></td>
 				<td th:text="${list.name}"></td>
-				<td><a th:href="@{/delete(bno=${list.bno})}">삭제</a></td>
+				<td><a th:href="@{/boardDelete(bno=${list.bno})}">삭제</a></td>
 				<td><a th:href="@{/boardDetailWrite(bno=${list.bno})}">대상작성</a></td>
 			</tr>
 		</tbody>
