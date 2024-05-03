@@ -123,7 +123,9 @@ public class MyController {
 	
 	//boardDetailWrite 대상에게 글쓰기
 	@RequestMapping("/boardDetailWrite")
-	public String boardDetailWrite() {
+	public String boardDetailWrite(@RequestParam("bno") String bno, Model model) {
+		
+		model.addAttribute("target", dao.getDto(bno));
 		
 		return "boardDetailWrite";
 	}
@@ -147,7 +149,7 @@ public class MyController {
 	}
 	
 	//boardDelete 삭제
-	@RequestMapping("/delete")
+	@RequestMapping("/boardDelete")
 	public String boardDelete(@RequestParam("bno") String bno ) {
 	
 		dao.delete(bno);
@@ -158,11 +160,11 @@ public class MyController {
 	///////////////////////////////////////////////////////////
 	//MyPage
 	@RequestMapping("/myPage")
-	public String mypage(Model model,@RequestParam("mno") String mno, @RequestParam("uno") String uno) {
+	public String mypage(Model model,@RequestParam("mno") String mno) {
 		//mno 본인이 쓴 게시물
 		model.addAttribute("mymno",dao.getMyMnoPage(mno));
 		//uno 본인이 언급된 게시물
-		model.addAttribute("myuno",dao.getMyUnoPage(uno));
+		model.addAttribute("myuno",dao.getMyUnoPage(mno));
 		
 		return "myPage";
 	}
