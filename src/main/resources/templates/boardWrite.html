@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<h2>Board Write Page</h2>
-<form action="write" method="post">
-    <input type="hidden" name="mno" th:value="${session.mno}">
-    제목: <input type="text" name="title" placeholder="제목을 입력하세요"><br>
-    내용: <input type="text" name="content" placeholder="내용을 입력하세요"><br>
-    <input type="submit" value="작성 완료">
-</form>
+	<header class="header">
+		<h2>게시글 작성</h2>
+	</header>
+	<nav>
+		<a th:href="@{/}">홈으로 가기</a>
+	</nav>
+	<form action="write" method="post">
+		<input type="hidden" name="mno" th:value="${session.mno}"> 제목:
+		<input type="text" name="title" placeholder="제목을 입력하세요"><br>
+		내용: <input type="text" name="content" class="content"
+			placeholder="내용을 입력하세요"><br> <input type="submit"
+			value="작성 완료">
+	</form>
 </body>
 </html>
