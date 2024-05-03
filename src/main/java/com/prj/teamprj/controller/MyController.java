@@ -87,17 +87,15 @@ public class MyController {
 	
 	//로그아웃
 	@RequestMapping("/logout")
-	public String logout() {
-		
-	    HttpSession session = request.getSession();
+	public String logout(HttpSession session) {
+
 	    session.invalidate();
 	    
-	    // 로그인 페이지로 리다이렉트
-	    return "redirect:login";
-	
+	    //로그아웃이후 첫화면으로
+	    return "redirect:/";
+		
 	
 	}
-	
 	
 	//boardList페이지
 	@RequestMapping("/boardList") //List 화면
@@ -123,6 +121,22 @@ public class MyController {
 		return "redirect:boardList";
 	}
 	
+	//boardDetailWrite 대상에게 글쓰기
+	@RequestMapping("/boardDetailWrite")
+	public String boardDetailWrite() {
+		
+		return "boardDetailWrite";
+	}
+	
+	@RequestMapping("/DetailWrite")
+	public String DetailWrite(MyPageDto dto) {
+		
+		dao.detailWrite(dto);
+		
+		return "redirect:boardDetail";
+	}
+	
+	
 	//boardDetail페이지(상세페이지)
 	@RequestMapping("/boardDetail")
 	public String boardDetail(@RequestParam("bno") String bno, Model model) {
@@ -133,10 +147,10 @@ public class MyController {
 	}
 	
 	//boardDelete 삭제
-	@RequestMapping("/boardDelete")
-	public String boardDelete(@RequestParam("bno") String bno, Model model) {
+	@RequestMapping("/delete")
+	public String boardDelete(@RequestParam("bno") String bno ) {
 	
-		model.addAttribute("list", dao.getDto(bno));
+		dao.delete(bno);
 		
 		//삭제했으니 확인하러 List보러가기
 		return "redirect:boardList";
@@ -152,8 +166,7 @@ public class MyController {
 		
 		return "myPage";
 	}
-	
-	
+
 	
 	 	
 }
